@@ -5,9 +5,6 @@ inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     default: '${{ github.token }}'
-  workdir:
-    description: 'Working directory relative to the root directory.'
-    default: '.'
   level:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
@@ -26,8 +23,8 @@ inputs:
       Exit code for reviewdog when errors are found [true,false]
       Default is `false`.
     default: 'false'
-  reviewdog_flags:
-    description: 'Additional reviewdog flags'
+  ansiblelint_flags:
+    description: 'flags and args of ansible-lint command. Default auto-detection mode' 
     default: ''
 runs:
   using: 'docker'

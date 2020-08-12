@@ -1,19 +1,10 @@
 #!/bin/sh
-set -e
 
-if [ -n "${GITHUB_WORKSPACE}" ] ; then
-  cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit
-fi
+cd "$GITHUB_WORKSPACE" || exit 
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-if [ find . -type f | grep -e "**\.yml" ] ; then
-  export ANSIBLE_FILE='**.yml'
-elif [ find . -type f | grep -e "**\.yaml" ] ; then
-  export ANSIBLE_FILE='**.yaml'
-fi
-
-ansible-lint -p ${INPUT_ANSIBLELINT_FLAGS:-ANSIBLE_FILE} \
+ansible-lint -p ${INPUT_ANSIBLELINT_FLAGS} \
   | reviewdog -efm="%f:%l:%c: %m" \
       -name="ansible-lint" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
