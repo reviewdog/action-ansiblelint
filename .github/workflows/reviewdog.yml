@@ -26,9 +26,9 @@ jobs:
           level: warning
           ansiblelint_flags: "testdata/test.yml"
 
-      - name: ansible-lint github-pr-check
+      - name: ansible-lint github-pr-review
         uses: ./
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
+          reporter: github-pr-review
           ansiblelint_flags: "testdata/test.yml"
