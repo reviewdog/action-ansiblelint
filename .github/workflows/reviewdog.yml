@@ -16,6 +16,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
+          ansiblelint_flags: "testdata/test.yml"
 
       - name: ansible-lint github-check
         uses: ./
@@ -23,9 +24,11 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           level: warning
+          ansiblelint_flags: "testdata/test.yml"
 
       - name: ansible-lint github-pr-check
         uses: ./
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
+          ansiblelint_flags: "testdata/test.yml"
