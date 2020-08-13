@@ -8,8 +8,4 @@ ansible-lint -p ${INPUT_ANSIBLELINT_FLAGS} \
   | reviewdog -efm="%f:%l:%c: %m" \
       -name="ansible-lint" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
-      -filter-mode="${INPUT_FILTER_MODE}" \
-      -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
-      -level="${INPUT_LEVEL}" \
-      ${INPUT_REVIEWDOG_FLAGS}
-
+      -level="${INPUT_LEVEL}" 
