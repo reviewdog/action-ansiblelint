@@ -1,0 +1,10 @@
+---
+- name: Test Ansible PlayBook
+  hosts: all
+
+  tasks:
+    - name: Test Command
+      command: ls -la
+    - name: Test Shell
+      shell: ls
+
