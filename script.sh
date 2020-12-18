@@ -15,7 +15,7 @@ echo '::endgroup::'
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-echo '::group:: Running tflint with reviewdog 🐶 ...'
+echo '::group:: Running ansible-lint with reviewdog 🐶 ...'
 ansible-lint -p ${INPUT_ANSIBLELINT_FLAGS} \
   | reviewdog -efm="%f:%l: %m" \
       -name="ansible-lint" \

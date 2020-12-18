@@ -36,11 +36,15 @@ Optional. Filtering mode for the reviewdog command [added,diff_context,file,nofi
 
 ### `fail_on_error`
 
-Optional. Exit code for reviewdog when errors are found [true,false] Default is `false`.
+Optional. Exit code for reviewdog when errors are found [true,false]. Default is `false`.
 
 ### `reviewdog_flags`
 
 Optional. Additional reviewdog flags.
+
+### `ansiblelint_version`
+
+Optional. The ansible-lint version to use. Default is `4.3.7`.
 
 ### `ansiblellint_flags`
 
