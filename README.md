@@ -1,15 +1,15 @@
 # GitHub Action: Run ansible-lint with reviewdog 🐕
 
-[![Docker Image CI](https://github.com/takezyou/action-ansiblelint/workflows/Docker%20Image%20CI/badge.svg?branch=master)](https://github.com/takezyou/action-ansiblelint/actions)
-[![Release](https://img.shields.io/github/v/release/takezyou/action-ansiblelint?logoColor=orange)](https://github.com/takezyou/action-ansiblelint/releases)
+[![Docker Image CI](https://github.com/reviewdog/action-ansiblelint/workflows/Docker%20Image%20CI/badge.svg?branch=master)](https://github.com/reviewdog/action-ansiblelint/actions)
+[![Release](https://img.shields.io/github/v/release/reviewdog/action-ansiblelint?logoColor=orange)](https://github.com/reviewdog/action-ansiblelint/releases)
 
 
 This action runs [ansible-lint](https://github.com/ansible/ansible-lint) with
 [reviewdog](https://github.com/reviewdog/reviewdog) on pull requests to improve
 code review experience.
 
-[![github-pr-check sample](https://user-images.githubusercontent.com/20274882/90307579-67142400-df12-11ea-96e9-62710cb1fff0.png)](https://github.com/takezyou/action-ansiblelint/pull/1)
-[![github-pr-review sample](https://user-images.githubusercontent.com/20274882/90307608-c70aca80-df12-11ea-9556-921f1e7e6281.png)](https://github.com/takezyou/action-ansiblelint/pull/1)
+[![github-pr-check sample](https://user-images.githubusercontent.com/20274882/90307579-67142400-df12-11ea-96e9-62710cb1fff0.png)](https://github.com/reviewdog/action-ansiblelint/pull/1)
+[![github-pr-review sample](https://user-images.githubusercontent.com/20274882/90307608-c70aca80-df12-11ea-9556-921f1e7e6281.png)](https://github.com/reviewdog/action-ansiblelint/pull/1)
 
 ## Inputs
 
@@ -36,11 +36,15 @@ Optional. Filtering mode for the reviewdog command [added,diff_context,file,nofi
 
 ### `fail_on_error`
 
-Optional. Exit code for reviewdog when errors are found [true,false] Default is `false`.
+Optional. Exit code for reviewdog when errors are found [true,false]. Default is `false`.
 
 ### `reviewdog_flags`
 
 Optional. Additional reviewdog flags.
+
+### `ansiblelint_version`
+
+Optional. The ansible-lint version to use. Default is `4.3.7`.
 
 ### `ansiblellint_flags`
 
@@ -61,8 +65,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
       - name: ansible-lint
-        uses: takezyou/action-ansiblelint@v1
+        uses: reviewdog/action-ansiblelint@v1
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
