@@ -44,7 +44,7 @@ Optional. Additional reviewdog flags.
 
 ### `ansiblelint_version`
 
-Optional. The ansible-lint version to use. Default is `4.3.7`.
+Optional. The ansible-lint version to use. Default is `5.0.2`.
 
 ### `ansiblellint_flags`
 
@@ -73,5 +73,5 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
-          ansiblelint_flags: '-x 301 playbook/*'
+          ansiblelint_flags: '-x core playbook/*'
 ```
