@@ -24,4 +24,7 @@ ansible-lint -p ${INPUT_ANSIBLELINT_FLAGS} \
       -filter-mode="${INPUT_FILTER_MODE}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       ${INPUT_REVIEWDOG_FLAGS}
+exit_code=$?
 echo '::endgroup::'
+
+exit $exit_code
