@@ -19,7 +19,7 @@ echo '::group:: Running ansible-lint with reviewdog 🐶 ...'
 ansible-lint -p ${INPUT_ANSIBLELINT_FLAGS} \
   | reviewdog -efm="%f:%l: %m" \
       -name="ansible-lint" \
-      -reporter="${INPUT_REPORTER:-github-pr-check}" \
+      -reporter="${INPUT_REPORTER:github-pr-check}" \
       -level="${INPUT_LEVEL}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
