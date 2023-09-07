@@ -64,10 +64,10 @@ jobs:
     name: runner / ansible-lint 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v2
         with:
-          python-version: 3.6
+          python-version: "3.6"
       - name: ansible-lint
         uses: reviewdog/action-ansiblelint@v1
         with:
