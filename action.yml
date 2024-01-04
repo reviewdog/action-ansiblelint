@@ -56,7 +56,7 @@ runs:
         INPUT_REPORTER: ${{ inputs.reporter }}
         INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
         INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
-        INPUT_WORKING_DIRECTORY: ${{ inputs.working_directory }}
+        INPUT_WORKING_DIRECTORY: ${{ inputs.workdir }}
         INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
 
 branding:
