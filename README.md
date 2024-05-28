@@ -44,7 +44,7 @@ Optional. Additional reviewdog flags.
 
 ### `ansiblelint_version`
 
-Optional. The ansible-lint version to use. Default is `5.0.2`.
+Optional. The ansible-lint version to use. Default is `5.3.2`.
 
 ### `ansiblellint_flags`
 
@@ -61,7 +61,7 @@ name: reviewdog
 on: [pull_request]
 jobs:
   ansible-lint:
-    name: runner / ansible-lint 
+    name: runner / ansible-lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
