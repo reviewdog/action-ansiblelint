@@ -22,6 +22,7 @@ ansible-lint -p ${INPUT_ANSIBLELINT_FLAGS} \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
       -level="${INPUT_LEVEL}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
+      -fail-level="${INPUT_FAIL_LEVEL}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
       ${INPUT_REVIEWDOG_FLAGS}
 exit_code=$?
