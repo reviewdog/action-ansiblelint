@@ -10,7 +10,7 @@ curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.s
 echo '::endgroup::'
 
 echo '::group:: Installing ansible-lint ... https://github.com/ansible/ansible-lint'
-pip3 install --no-cache-dir ansible-lint=="${INPUT_ANSIBLELINT_VERSION}" "ansible>=2.9,<2.11"
+pip3 install --no-cache-dir ansible-lint=="${INPUT_ANSIBLELINT_VERSION}"
 echo '::endgroup::'
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
