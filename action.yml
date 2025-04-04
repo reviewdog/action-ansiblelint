@@ -41,7 +41,7 @@ inputs:
     default: "."
   ansiblelint_version:
     description: "The ansible-lint version to use"
-    default: "5.3.2"
+    default: "24.12.2"
   ansiblelint_flags:
     description: "Flags and args of ansible-lint command"
     default: ""
