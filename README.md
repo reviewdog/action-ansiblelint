@@ -83,3 +83,14 @@ jobs:
           reporter: github-pr-review # Change reporter.
           ansiblelint_flags: '-x core playbook/*'
 ```
+
+To cache the `ansible`/`ansible-lint` installation, set the `cache` and
+`cache-dependency-path` input variables in the `setup-python` action, e.g.:
+
+```yml
+      - uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2.3.4
+        with:
+          python-version: "3.6"
+          cache: "pip"
+          cache-dependency-path: ".github/workflows/lint.yml"
+```
