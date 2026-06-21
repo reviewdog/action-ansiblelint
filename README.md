@@ -52,7 +52,7 @@ Optional. Additional reviewdog flags.
 
 ### `ansiblelint_version`
 
-Optional. The ansible-lint version to use. Default is `5.3.2`.
+Optional. The ansible-lint version to use. Default is `24.12.2`.
 
 ### `ansiblelint_flags`
 
